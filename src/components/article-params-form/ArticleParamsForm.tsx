@@ -25,7 +25,8 @@ type ArticleParamsFormProps = {
 
 export const ArticleParamsForm = ({ onApply }: ArticleParamsFormProps) => {
 	const [isOpen, setIsOpen] = useState(false);
-	const [formState, setFormState] = useState<ArticleStateType>(defaultArticleState);
+	const [formState, setFormState] =
+		useState<ArticleStateType>(defaultArticleState);
 	const containerRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -55,8 +56,12 @@ export const ArticleParamsForm = ({ onApply }: ArticleParamsFormProps) => {
 	return (
 		<div ref={containerRef}>
 			<ArrowButton isOpen={isOpen} onClick={() => setIsOpen((prev) => !prev)} />
-			<aside className={clsx(styles.container, { [styles.container_open]: isOpen })}>
-				<form className={styles.form} onSubmit={handleSubmit} onReset={handleReset}>
+			<aside
+				className={clsx(styles.container, { [styles.container_open]: isOpen })}>
+				<form
+					className={styles.form}
+					onSubmit={handleSubmit}
+					onReset={handleReset}>
 					<Text as='h2' size={31} weight={800} uppercase>
 						Задайте параметры
 					</Text>
